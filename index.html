@@ -2,37 +2,116 @@
 <html lang="en">
 
 <head>
-    <meta name="author" content="Ugljesa Todorovic">
-    <link rel="stylesheet" href="stilizacija.css" type="text/css">
-    <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
-    <style>
+  <meta name="author" content="Ugljesa Todorovic">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment_Responsive_Gallery</title>
+  <style>
+    body {
+      width: 960px;
+      margin: 20px auto;
+    }
+
+    h2 {
+      margin-bottom: 50px;
+      font-weight: normal;
+      font-family: sans-serif;
+    }
+
+    p {
+      margin-top: 70px;
+      color: grey;
+      font-size: 1em;
+      text-shadow: 1px 1px 1px grey;
+    }
+
+    #grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-template-rows: 120px 120px;
+      gap: 40px;
+    }
+
+    .box {
+      height: 120px;
+      background-image: url(placeholder-image.png), linear-gradient(rgb(9, 121, 136) 85%, rgb(204, 204, 204) 85%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 150px 100px;
+      border-radius: 42px;
+    }
+
+    .box::after {
+      content: "Image Title";
+      font-size: 15px;
+      color: whitesmoke;
+      position: relative;
+      top: 93px;
+      left: 42px;
+    }
 
 
-    </style>
+    @media screen and (max-width: 960px) {
+      #grid-container {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      #grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .box::after {
+        left: 110px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      #grid-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .box::after {
+        left: 444px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/">Google</a>
-    <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
-    <div id="first-div">
-        <h2>Subheading</h2>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p>Paragraph 4</p>
-            <p>Paragraph 5</p>
-            <p>Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
-        </div>
-    </div>
-    <p>Paragraph 9</p>
-    <p>Paragraph 10</p>
+  <h2>Gallery Heading</h2>
+  <div id="grid-container">
+    <div id="box-1" class="box"></div>
+    <div id="box-2" class="box"></div>
+    <div id="box-3" class="box"></div>
+    <div id="box-4" class="box"></div>
+    <div id="box-5" class="box"></div>
+    <div id="box-6" class="box"></div>
+    <div id="box-7" class="box"></div>
+    <div id="box-8" class="box"></div>
+    <div id="box-9" class="box"></div>
+    <div id="box-10" class="box"></div>
+  </div>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, sequi. Sequi sit, quo quis, dolore quisquam
+    enim, error nesciunt reiciendis veritatis soluta animi? Facere ducimus deleniti natus. Ipsa, repudiandae velit!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ut sint magni doloribus dolore repellendus officiis,
+    quas consequuntur alias blanditiis obcaecati quia fugiat provident atque, quasi, exercitationem qui dolorum
+    repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident accusantium nisi eos nihil in numquam
+    atque. Et, temporibus magnam? Molestias libero rem quidem, labore incidunt nihil adipisci sequi distinctio ab. Lorem
+    ipsum dolor sit amet, consectetur adipisicing elit. Tempora maiores, architecto nulla, nemo iure veritatis quam
+    officia laborum incidunt quis suscipit molestias expedita iusto eos odit deserunt? Explicabo, quasi? Delectus. Lorem
+    ipsum dolor, sit amet consectetur adipisicing elit. Nostrum facilis, blanditiis accusantium soluta commodi magnam,
+    sunt maxime perferendis similique earum placeat illum quam, magni provident reiciendis excepturi rem? Officia,
+    sequi?
+  </p>
+
 </body>
 
 </html>
